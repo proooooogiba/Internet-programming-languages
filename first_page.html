@@ -2,7 +2,7 @@
 <html lang="en">
         <head>  
             <meta charset="utf-8">
-            <title> Title </title>
+            <title> Первая часть </title>
             <style>
                 body {
                     background:linear-gradient(90deg, #f39fb9 10%, #8ad7f0 94%);
@@ -18,32 +18,42 @@
         <body>
         <div class="block1"></div>
         <h1> Коды ответа HTTP</h1>
-        <p class="unselectable">Код ответа (состояния) <b>HTTP</b> показывает, был ли успешно выполнен определённый <b>HTTP</b> </br>
+        <p class="unselectable">Код ответа (состояния) <b>HTTP</b> показывает, был ли успешно выполнен определённый <b>HTTP</b>
             запрос. Коды сгруппированы в <strong>5</strong> классов:</p>
         <ol type="1">
- 		    <li>Информационные <span style="color:rgb(73, 110, 19)">100-199</span></li>
+ 		    <li><i>Информационные</i> <span style="color:rgb(73, 110, 19)">100-199</span></li>
  		    <li>Успешные <span style="color:rgb(7, 109, 7)">200-299</span></li>
             <li>Перенаправления <span style="color: rgb(255, 200, 0)">300-399</span></li>
             <li>Клиентские ошибки <span style="color:rgb(188, 57, 9)">400-499</span></li>
             <li>Серверные ошибки <span style="color:rgb(138, 6, 6)">500-599</span></li>          
  		</ol>
         <p>Коды состояния определены в <strong>10-ой секции RFC 2616</strong>. Обновленную спецификацию можно найти в <strong>RFC 7231</strong>.</p>
-        </br>
         <p class="all">Ниже представлены <b>серверные ошибки</b>:</p>
         <ul>
                 <li>500 Internal Server Error</li>
                 <li>501 Not Implemented</li>
-                <li>502 Bad Gateway</li>
+                <li>502 <i>Bad Gateway</i></li>
                 <li>503 Service Unavailable</li>
                 <li>504 Gateway Timeout</li>
                 <li>505 HTTP Version Not Supported</li>
             </ul>
-        <p>Если вы получили код ответа (состояния), которого нет в данном списке, в таком случае он </br>
-            является не стандартизированным кодом ответа (состояния), вероятней всего он кастомный </br>
+        <p>Если вы получили код ответа (состояния), которого нет в данном списке, в таком случае он 
+            является не стандартизированным кодом ответа (состояния), вероятней всего он кастомный
             сервера.</p>
         <h3>Математические формулы</h3>
-        <p>Определение предела: &forall;&#949; > 0 &exist;N &forall;n > N: |x - a| < &#949;;</p>
+        <p><i>Определение предела:</i> &forall;&#949; > 0 &exist;N &forall;n > N: |x - a|&lt;&#949;;</p>
         <p>Теорема Пифагора: <var>a<sup>2</sup></var> + <var>b<sup>2</sup></var> = <var>c<sup>2</sup></var></p>
+        <h3>Пример кода на языке C++:</h3>
+        <pre>
+            <code>
+                #include &lt;iostream&gt;
+                using namespace std;
+                int main()
+                {
+                    cout << "Hello, World!";
+                    return 0;
+                }
+            </code>
     </body>
 </html>
 
