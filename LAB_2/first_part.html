@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title> Первая часть </title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: rgba(233, 227, 227, 0.641);
+            color: white;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            margin: 5px 5px 5px 5px;
+            padding: 0;
+        }
+
+        .title {
+            user-select: none;
+            font-size: 30px;
+            font-weight: bold;
+            margin: 40px 20px 20px 0px;
+            padding: 20px 5px 5px 5px;
+            line-height: 30px;
+            color: rgb(0, 0, 0);
+        }
+
+        .HTTP {
+            display: inline-block;
+            font-size: 22px;
+            font-weight: bold;
+            color: rgba(119, 16, 16, 0.424);
+        }
+
+        .math {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+            padding: 10px 10px 10px 20px;
+            color: aqua;
+        }
+
+        #server_response {
+            font-size: 20px;
+            font-weight: lighter;
+            margin: 0px 0px 0px 20px;
+            padding: 5px 5px 5px 5px;
+            color: rgba(0, 89, 89, 0.514);
+        }
+
+        .paragraph {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: normal;
+            margin: 0;
+            padding: 5px 5px 5px 5px;
+            color: rgb(0, 0, 0);
+        }
+
+        .numbers {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: normal;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: rgba(37, 6, 1, 0.397);
+        }
+
+        .paragraph2 {
+            display: inline-block;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+            padding: 10px 10px 10px 20px;
+            color: rgb(17, 92, 49);
+        }
+
+        .info {
+            display: inline-block;
+            font-weight: bold;
+            margin: 0;
+            padding: 5px 5px 5px 5px;
+            font-style: italic;
+        }
+
+        .column {
+            display: inline-table;
+            width: 40%;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 16px;
+            color: rgb(0, 0, 0);
+            text-align: left;
+            box-sizing: border-box;
+        }
+
+        pre {
+            padding-left: 20px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 16px;
+            color: rgb(0, 0, 0);
+            text-align: left;
+            border: 4px solid rgba(78, 1, 89, 0.363);
+        }
+        
+
+        #include {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: lighter;
+            margin: 0;
+            color: rgba(221, 13, 13, 0.489);
+        }
+
+        #std {
+            display: inline-block;
+            font-size: 16px;
+            font-weight:bold;
+            margin: 0;
+            color: rgba(20, 13, 221, 0.477);
+        }
+
+        #hellow {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+            color: rgba(10, 64, 17, 0.353);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="column">
+            <div class="title">
+                Коды ответа HTTP
+            </div>
+            <div class="paragraph">
+                Код ответа (состояния)
+
+                <div class="HTTP">
+                    HTTP
+                </div>
+                показывает, был ли успешно выполнен определённый HTTP
+                запрос. Коды сгруппированы в
+                <div class="numbers">5</div>
+                классов:
+            </div>
+
+            <ol type="1">
+                <div id="server_response">
+                    <li>
+                        <div class="info">Информационные</div> 100-199
+                    </li>
+                    <li>Успешные 200-299</li>
+                    <li>Перенаправления 300-399</li>
+                    <li>Клиентские ошибки 400-499</li>
+                    <li>Серверные ошибки 500-599</li>
+                </div>
+            </ol>
+            <div class="paragraph">
+                Коды состояния определены в 10-ой секции RFC <div class="numbers">2616</div>. Обновленную спецификацию
+                можно
+                найти в
+                RFC <div class="numbers">7231</div>.
+            </div>
+
+            <div class="paragraph">Ниже представлены <b>серверные ошибки</b>:</p>
+                <ul>
+                    <li>500 Internal Server Error</li>
+                    <li>501 Not Implemented</li>
+                    <li>502 Bad Gateway</li>
+                    <li>503 Service Unavailable</li>
+                    <li>504 Gateway Timeout</li>
+                    <li>505 HTTP Version Not Supported</li>
+                </ul>
+                <p>Если вы получили код ответа (состояния), которого нет в данном списке, в таком случае он
+                    является не стандартизированным кодом ответа (состояния), вероятней всего он кастомный
+                    сервера.</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="title">
+                Математические формулы
+            </div>
+            <div class="paragraph">
+                Определение предела: &forall;&#949; > 0 &exist;N &forall;n > N: |x -
+                a|&lt;&#949;;
+                <p>Теорема Пифагора: <var>a<sup>2</sup></var> + <var>b<sup>2</sup></var> = <var>c<sup>2</sup></var></p>
+                <div class="title">Пример кода на языке C++:</div>
+                <pre>
+                <code>
+<div id="include">#include &lt;iostream&gt;</div>
+using namespace <div id="std">std</div>;
+int main()
+{
+cout << <div id="hellow">Hello, World!"</div>;
+return 0;
+}
+            </code>
+            </pre>
+            </div>
+        </div>
+</body>
+
+</html>

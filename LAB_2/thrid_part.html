@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICS6 Bootstrap</title>
+    <link href="http://e-learning.bmstu.ru/moodle/pluginfile.php/7546/mod_folder/content/0/bootstrap.min.css" rel="stylesheet">
+    <style>
+        form {
+            box-sizing: border-box;
+            border: 1px solid rgb(9, 16, 80);
+            border-radius: 8px;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 8px;
+            margin:5% 30% 5% 30%;
+            width: 40%;
+            align-items: center;
+            align-self: center;
+            background: -webkit-repeating-radial-gradient(rgba(244, 158, 158, 0.358), rgba(101, 170, 138, 0.253));
+            user-select: none;
+        }
+
+        input[type=text] {
+            width: 60%;
+            padding: 2px 10px;
+            margin: 4px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: 0.5s;
+            outline: none;
+        }
+
+        input[type=file] {
+            width: 60%;
+            margin: 4px 0;
+            box-sizing: border-box;
+            transition: 0.5s;
+            outline: none;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            align-self: center;
+        }
+
+        input[type=submit] {
+            background: -webkit-repeating-radial-gradient(rgba(244, 158, 158, 0.358), rgba(101, 170, 138, 0.253));
+            color: white;
+            padding: 14px 60px;
+            margin: 8px 2px 8px 2px;
+            border-radius: 4px;
+            border: 1px solid rgba(9, 36, 80, 0.018);
+            cursor: pointer;
+            align-self: center;
+            outline: 3px solid rgb(9, 185, 188);
+        }
+
+        input[type=submit]:hover {
+            background: repeating-linear-gradient(rgba(3, 98, 41, 0.132), rgba(19, 156, 1, 0.219));
+        }
+        
+        input[type=password] {
+            width: 60%;
+            padding: 2px 10px;
+            margin: 4px 0;
+            box-sizing: border-box;
+            transition: 0.5s;
+            outline: none;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+        body {
+            background: -webkit-repeating-radial-gradient(rgba(18, 216, 176, 0.241), rgba(44, 192, 18, 0.038));
+            margin-bottom: 40px;
+        }
+
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        main {
+            margin-top: 15px;
+        }
+
+        footer {
+            height: 40px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .my-primary {
+            background-color: #00683965;
+            color: white;
+            border-radius: 10px;
+            border: 5px solid rgba(9, 36, 80, 0.018);
+        }
+
+        .title {
+            user-select: none;
+            font-size: 30px;
+            font-weight: bold;
+            margin: 40px 20px 20px 0px;
+            padding: 20px 5px 5px 5px;
+            line-height: 30px;
+            color: rgb(0, 0, 0);
+        }
+
+        .HTTP {
+            display: inline-block;
+            font-size: 22px;
+            font-weight: bold;
+            color: rgba(119, 16, 16, 0.424);
+        }
+
+        .math {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+            padding: 10px 10px 10px 20px;
+            color: aqua;
+        }
+
+        #server_response {
+            font-size: 20px;
+            font-weight: lighter;
+            margin: 0px 0px 0px 20px;
+            padding: 5px 5px 5px 5px;
+            color: rgba(0, 89, 89, 0.514);
+        }
+
+        .paragraph {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: normal;
+            margin: 0;
+            padding: 5px 5px 5px 5px;
+            color: rgb(0, 0, 0);
+        }
+
+        .numbers {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: normal;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: rgba(37, 6, 1, 0.397);
+        }
+
+        .paragraph2 {
+            display: inline-block;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+            padding: 10px 10px 10px 20px;
+            color: rgb(17, 92, 49);
+        }
+
+        .info {
+            display: inline-block;
+            font-weight: bold;
+            margin: 0;
+            padding: 5px 5px 5px 5px;
+            font-style: italic;
+        }
+
+        .column {
+            display: inline-table;
+            width: 40%;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 16px;
+            color: rgb(0, 0, 0);
+            text-align: left;
+            box-sizing: border-box;
+        }
+
+        pre {
+            padding-left: 20px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 16px;
+            color: rgb(0, 0, 0);
+            text-align: left;
+            border: 4px solid rgba(78, 1, 89, 0.363);
+        }
+        
+
+        #include {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: lighter;
+            margin: 0;
+            color: rgba(221, 13, 13, 0.489);
+        }
+
+        #std {
+            display: inline-block;
+            font-size: 16px;
+            font-weight:bold;
+            margin: 0;
+            color: rgba(20, 13, 221, 0.477);
+        }
+
+        #hellow {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+            color: rgba(10, 64, 17, 0.353);
+        }
+
+        .footer-text {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 13px;
+            font-weight: lighter;
+            margin: 0;
+            padding: 5px 5px 5px 5px;
+            color: rgb(244, 247, 237);
+        }
+
+        table {
+            box-sizing: border-box;
+            border-collapse: collapse;
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+            border: 3px solid rgba(0, 0, 0, 0.397);
+            font-family: monospace;
+            color:rgb(10, 64, 17);
+        }
+
+        tr {
+            box-sizing: border-box;
+            border-collapse: collapse;
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+            border: 3px solid rgba(0, 0, 0, 0.397);
+            font-family: monospace;
+            color:rgb(10, 64, 17);
+            
+        }
+        th, td {
+            border: 3px solid rgba(0, 0, 0, 0.397);
+            border-collapse: collapse;
+            text-align: left;
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        .form-control {
+            background-color: rgba(38, 78, 153, 0.161);
+        }
+
+        .table {
+            border: 2px solid rgba(104, 23, 23, 0.397);
+            border-radius: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark my-primary">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    59
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="row">
+            <div class="col-4">
+                <img src="http://e-learning.bmstu.ru/iu6/pluginfile.php/7546/mod_folder/content/0/avatar.jpg" alt="avatar" width="150" height="150">
+            </div>
+            <div class="col-8">
+                <p>Любой текст</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <form>
+                    <input type="text" required placeholder="Имя" id="GET-name" name="name"><br />
+                    <input type="text" required placeholder="Фамилия" id="GET-surname" name="surname"><br />
+                    <input type="text" placeholder="Отчество" name="patronymic"><br />
+                    <div class="form-outline">
+                        <input type="text" id="formControlDefault" class="form-control" placeholder="Телефон" style="background-color: white;" />
+                      </div>
+                    <div class="form-group">
+                        <label for="inputDate">Введите дату:</label>
+                        <input type="date" class="form-control" style="background-color: white; border: 2px solid rgba(188, 173, 173, 0.697); border-radius: 4px; user-select: none;">
+                      </div>
+                    Пол: <input type="radio" name="gender" id="GET-gender" value="male">М
+                    <input type="radio" name="gender" value="female" />Ж<br />
+                    <input type="text" required placeholder="Адрес" id="GET-addres" name="addres"><br />
+                    <input type="password" required placeholder="Пароль" id="GET-password" name="text"><br />
+                    <input type="password" required placeholder="Подтверждение пароля" id="GET-password" name="text"><br />
+                    <input class="form-control" type="file" id="formFile"><br />
+                    <button class="btn btn-primary" type="submit" style="background-color: #13ad6865; border: 1px solid #083d25a9; border-radius: 4px;">Зарегистрироваться</button>
+                </form>
+            </div>
+            <div class="col-4">
+                <table>
+                    <thead style="background-color:rgba(5, 106, 86, 0.499);">
+                        <tr>
+                          <th scope="col">День недели</th>
+                          <th scope="col">Время</th>
+                          <th scope="col">Предмет</th>
+                          <th scope="col">Преподаватель</th>
+                        </tr>
+                      </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row" rowspan="2">Понедельник</th>
+                        <td>8:30-10:05</td>
+                        <td>Информатика</td>
+                        <td>Иванов И.И.</td>
+                    </tr>
+                    <tr>
+                        <td>10:25-12:00</td>
+                        <td>Математика</td>
+                        <td>Петров П.П.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" rowspan="2">Вторник</th>
+                        <td>8:30-10:05</td>
+                        <td rowspan="2">Физика</td>
+                        <td rowspan="2">Сидоров С.С.</td>
+                    <tr>
+                        <td>10:25-12:00</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Среда</th>
+                        <td>12:20-13:55</td>
+                        <td>Биология</td>
+                        <td>Нетесов П.С.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" rowspan="2">Четверг</th>
+                        <td>8:30-10:05</td>
+                        <td>Математика</td>
+                        <td>Петров П.П.</td>
+                    </tr>
+                    <tr>
+                        <td>10:25-12:00</td>
+                        <td>Информатика</td>
+                        <td>Иванов И.И.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" rowspan="2">Пятница</th>
+                        <td>8:30-10:05</td>
+                        <td>Физика</td>
+                        <td>Сидоров С.С.</td>
+                    </tbody>
+                </table>     
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="title">
+                    Коды ответа HTTP
+                </div>
+                <div class="paragraph">
+                    Код ответа (состояния)
+    
+                    <div class="HTTP">
+                        HTTP
+                    </div>
+                    показывает, был ли успешно выполнен определённый HTTP
+                    запрос. Коды сгруппированы в
+                    <div class="numbers">5</div>
+                    классов:
+                </div>
+    
+                <ol type="1">
+                    <div id="server_response">
+                        <li>
+                            <div class="info">Информационные</div> 100-199
+                        </li>
+                        <li>Успешные 200-299</li>
+                        <li>Перенаправления 300-399</li>
+                        <li>Клиентские ошибки 400-499</li>
+                        <li>Серверные ошибки 500-599</li>
+                    </div>
+                </ol>
+                <div class="paragraph">
+                    Коды состояния определены в 10-ой секции RFC <div class="numbers">2616</div>. Обновленную спецификацию
+                    можно
+                    найти в
+                    RFC <div class="numbers">7231</div>.
+                </div>
+    
+                <div class="paragraph">Ниже представлены <b>серверные ошибки</b>:</p>
+                    <ul>
+                        <li>500 Internal Server Error</li>
+                        <li>501 Not Implemented</li>
+                        <li>502 Bad Gateway</li>
+                        <li>503 Service Unavailable</li>
+                        <li>504 Gateway Timeout</li>
+                        <li>505 HTTP Version Not Supported</li>
+                    </ul>
+                    <p>Если вы получили код ответа (состояния), которого нет в данном списке, в таком случае он
+                        является не стандартизированным кодом ответа (состояния), вероятней всего он кастомный
+                        сервера.</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="title">
+                    Математические формулы
+                </div>
+                <div class="paragraph">
+                    Определение предела: &forall;&#949; > 0 &exist;N &forall;n > N: |x -
+                    a|&lt;&#949;;
+                    <p>Теорема Пифагора: <var>a<sup>2</sup></var> + <var>b<sup>2</sup></var> = <var>c<sup>2</sup></var></p>
+                    <div class="title">Пример кода на языке C++:</div>
+                    <pre>
+                    <code>
+    <div id="include">#include &lt;iostream&gt;</div>
+    using namespace <div id="std">std</div>;
+    int main()
+    {
+    cout << <div id="hellow">Hello, World!"</div>;
+    return 0;
+    }
+                </code>
+                </pre>
+                </div>
+            </div>
+            </div>
+        </div>
+    </main>
+    <footer class="my-primary">
+        <div class="container">
+            <p class="footer-text">За дополнительной информацией обращайтесь по номеру: +7(999)203-25-41</p>
+        </div>
+    </footer>
+</body>
+
+</html>
