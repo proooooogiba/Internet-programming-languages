@@ -1,20 +1,20 @@
-let flag = true;
-function traversal(element, str) {
-    var list = document.getElementById("list-elements");
-    if (flag) {
-        str = `<li class="new">${element.nodeName}</li>`;
-        flag = false; 
-    }
-    // let str = `<li class="new">${element.nodeName}</li>`;
+counter = 0;
+function traversal(element) {
+    let list = document.getElementById("list-elements");
+
     if (element.nodeType != 3) {
         console.log(element.nodeName);
-        list.innerHTML += str;
+        let li = document.createElement("li");
+        li.setAttribute("class", "new");
+        li.innerHTML = element.nodeName;
+        list.appendChild(li);
     }
     for (let i = 0; i < element.childNodes.length; i++) {
         if (element.childNodes[i].className != "new") {
-            traversal(element.childNodes[i], '<ul class="new">'+ str +'</ul>');
+            traversal(element.childNodes[i]);
+            counter++;
         }
     }
 }
 
-window.onload = function (e) { traversal(document, `<li class="new">${document.nodeName}</li>`) };
+window.onload = function (e) { traversal(document) };
