@@ -1,7 +1,6 @@
 counter = 0;
 function traversal(element) {
-    let list = document.getElementById("list-elements");
-
+    let list = document.getElementById("list-0");
     if (element.nodeType != 3) {
         console.log(element.nodeName);
         let li = document.createElement("li");
@@ -12,7 +11,6 @@ function traversal(element) {
     for (let i = 0; i < element.childNodes.length; i++) {
         if (element.childNodes[i].className != "new") {
             traversal(element.childNodes[i]);
-            counter++;
         }
     }
 }
