@@ -10,9 +10,9 @@ def function(x)
     yield x
 end
 
-def maxim(start, finish, step)
+def maxim(start, final, step)
     max = 0
-    (start..finish).step(step).each do |x| 
+    (start..final).step(step).each do |x| 
         delta_y = (function(x) {|x| Math.sin(x).to_f / x} - function(x) {|x| Math.tan(x + 1).to_f / (x + 1)}).abs
         if (delta_y > max)
             max = delta_y
