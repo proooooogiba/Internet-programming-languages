@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>РК-1</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+        <style>
+            table, tr {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                text-align: left;
+                padding: 8px;
+            }
+        </style>
+        <script src ="main.js"></script>
+    </head>
+<body>
+    <div class="col-12" id="Intials">
+        <h1>Погиба Иван ИУ6-34Б Вариант №46</h1>
+    </div>
+    <div class="col-8">
+        <p>
+            С клавиатуры вводится последовательсноть чисел через пробел и число k. 
+            Необоходимо найти все элементы массива, которые отличаются от максимального не более чем на k.
+        </p>
+    </div>
+    
+    <div class="col-8">
+        <input id='input-form' class="form-control" type="text" pattern="[0-9 ]+">
+    </div>
+    <div class="col-5">
+        <button id="add" onclick="add()">Добавить</button>
+    </div>
+    
+    <label>Результат:</label>
+    <label id="out">
+    </label>
+</body>
+</html>
