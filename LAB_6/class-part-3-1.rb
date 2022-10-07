@@ -1,7 +1,3 @@
-# func1 = lambda { |x| -x**2  + Math.sin(x / 2.0) }
-# func2 = lambda { |x| x**5 + 3 * x**3 + x**2 + 1}
-
-
 class FindRoot
     def self.func1
         return lambda { |x| -x**2  + Math.sin(x / 2.0) }
@@ -55,5 +51,4 @@ class FindRoot
 end
 
 test_root = FindRoot.new(0.0001)
-
 p test_root.lambda_root(FindRoot.func2)
