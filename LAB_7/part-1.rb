@@ -1,10 +1,11 @@
-def create_random_string()
-    string = ""
-    number = rand(1..3) * 5
-    number.times do
-        string += rand(1..100).to_s + "\n"
-    end
-    return string
+def generate_word
+    return (0...(rand(10))).map { ('а'..'я').to_a[rand(33)] }.join
+end
+
+def generate_random_text
+    arr = Array.new
+    (1..rand(2..10)).each { arr.push(rand(2..10).times.map { generate_word() }.join(" ")) }
+    return arr.join("\n").to_s
 end
 
 def write_to_file(string)
@@ -13,21 +14,18 @@ def write_to_file(string)
     file.close
 end
 
-string = create_random_string()
-
-write_to_file(string)
+text = generate_random_text()
+write_to_file(text)
 
 f = File.open("F.txt", "r")
-g = File.open("G.txt", "w")
-
 arr = Array.new
+
 f.each_line do |line|
-  arr.push(line.to_i)
-  if arr.length == 5
-    g.write(arr.max.to_s + "\n")
-    arr.clear
-  end
+    arr.push(line.split)
 end
 
+ans = arr.sum{|line| line.count{|word| word.length == 2}}
 f.close
-g.close
+
+puts text
+puts ans

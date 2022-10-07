@@ -1,40 +1,49 @@
-def create_string_number
-  string = ""
-  number = rand(1..3) * 5
-  number.times do
-      string += rand(1..100).to_s + "\n"
-  end
-  return string
-end
-
-class FileWork
-  attr_accessor :input_filename, :output_filename, :string
-  
-  def initialize(input_filename, output_filename)
-    @input_filename = input_filename
-    @output_filename = output_filename
-  end
-
-  def write_to_input_file(string)
-    @string = string
-    file = File.open("#{@input_filename}.txt", "w")
-    file.write(@string)
-    file.close
-  end
-
-  def write_from_input_to_output()
-    f = File.open("#{@input_filename}.txt", "r")
-    g = File.open("#{@output_filename}.txt", "w")
-
-    arr = Array.new
-    f.each_line do |line|
-      arr.push(line.to_i)
-      if arr.length == 5
-        g.write(arr.max.to_s + "\n")
-        arr.clear
-      end
+class WorkWithFile
+    attr_accessor :filename, :string
+    def initialize(filename = nil)
+        @filename = filename
     end
-    f.close
-    g.close
-  end
+
+    def self.generate_word
+        return (0...(rand(10))).map { ('а'..'я').to_a[rand(33)] }.join
+    end
+
+    def self.generate_random_text
+        arr = Array.new
+        (1..rand(2..10)).each { arr.push(rand(2..10).times.map { generate_word() }.join(" ")) }
+        return arr.join("\n").to_s
+    end
+
+    def write_to_file(string = WorkWithFile.generate_random_text())
+        @string = string
+        file = File.open(@filename + ".txt", "w")
+        file.write(@string)
+        file.close
+    end
+
+    def read_from_file()
+        f = File.open(@filename + ".txt", "r")
+        text = f.read()
+        f.close
+        return text        
+    end
+
+    def count_words_length(length = 2)
+        f = File.open(@filename + ".txt", "r")
+        arr = Array.new
+        f.each_line do |line|
+            arr.push(line.split)
+        end
+        f.close
+        return arr.sum{|line| line.count{|word| word.length == length}}
+    end    
 end
+
+file = WorkWithFile.new("F")
+file.write_to_file("AB S fs fds fsd m fds ,mfsd\nfdsanjfsnkfnsalk\nfsdklfmas")
+
+print file.read_from_file() + "\n"
+
+print file.count_words_length(2)
+
+

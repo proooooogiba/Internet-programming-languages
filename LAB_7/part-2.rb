@@ -1,30 +1,30 @@
-class Point
-    attr_reader :x, :y
-    def initialize(x,y)
-        @x, @y = x, y
-    end
-
-    def print
-        p "(x:#{@x}, y:#{@y})"
-    end
-end
-
-class Circle < Point
-    attr_reader :radius
+class Circle
+    attr_accessor :x, :y, :radius
     def initialize(x, y, radius)
-        super(x, y)
-        @radius = radius
+        @x, @y, @radius = x, y, radius
     end
 
-    def print
-        p "(x:#{@x}, y:#{@y}) radius: #{@radius}"
+    def print_circle
+        print "Circle: x = #{@x}, y = #{@y}, radius = #{@radius}"
+    end
+
+    def square
+        return Math::PI * @radius * @radius
     end
 end
 
+class Sphere < Circle
+    attr_accessor :z
+    def initialize(x, y, z, radius)
+        super(x, y, radius)
+        @z = z
+    end
 
-# point = Point.new(1, 2)
+    def print_sphere
+        print "Sphere: x = #{@x}, y = #{@y}, z = #{@z}, radius = #{@radius}"
+    end
 
-circle = Circle.new(1, 2, 3)
-
-# point.print
-circle.print
+    def volume
+        return 4.0 / 3 * Math::PI * @radius**3
+    end
+end

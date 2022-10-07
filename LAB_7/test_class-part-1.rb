@@ -1,32 +1,29 @@
 require './class-part-1.rb'
 require 'minitest/autorun'
 
-class TestFileWork < MiniTest::Test
+class TestWorkWithFile < MiniTest::Test
     def setup
-        @task_file = FileWork.new("F", "G")
+        @file = WorkWithFile.new("F")
+        @file.write_to_file("Hello, how are you? Everything is okay or not")
+        @f = File.open("F.txt", "r")
     end
-
+    
     def test_1
-        assert_equal("F", @task_file.input_filename)
-        assert_equal("G", @task_file.output_filename)
+        assert_equal("Hello, how are you? Everything is okay or not", @f.read, @file.read_from_file)
     end
 
     def test_2
-        @task_file.write_to_input_file("1 2 3 4 5")
-        file = File.open("#{@task_file.input_filename}.txt", "r")
-        assert_equal("1 2 3 4 5", file.read())
-
-        string = create_string_number()
-        @task_file.write_to_input_file(string)
-        file = File.open("#{@task_file.input_filename}.txt", "r")
-        assert_equal(string, file.read())
+        rand(10..20).times do
+            file = WorkWithFile.new("F")
+            text = WorkWithFile.generate_random_text
+            file.write_to_file(text)
+            f = File.open("F.txt", "r")
+            assert_equal(text, f.read, file.read_from_file)
+        end
     end
 
-    def test_3        
-        @task_file.write_to_input_file("1\n2\n3\n4\n5\n")
-        @task_file.write_from_input_to_output()
-        output_file = File.open("#{@task_file.output_filename}.txt", "r")
-        assert_equal("5\n", output_file.read())
+    def test_3
+        assert_equal(2, @file.count_words_length(2))
+        assert_equal(2, @file.count_words_length())
     end
-
 end
