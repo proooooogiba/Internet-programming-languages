@@ -1,0 +1,30 @@
+.price {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.main {
+    margin-bottom: 100px;
+}
+.input-block {
+    display: inline-block;
+}
+
+#calc-res {
+    display: inline-block;
+    margin-left: 2rem;
+    font-weight: bold;
+    font-size: larger;
+    color: rgba(1, 73, 255, 0.766);
+}
+
+.text1 {
+    text-align: center;
+    transform: translate(-8%, 0);
+}
+
+.text2 {
+    text-align: left;
+}
