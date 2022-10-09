@@ -1,0 +1,66 @@
+form {
+    box-sizing: border-box;
+    border: 1px solid rgb(9, 16, 80);
+    border-radius: 8px;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 8px;
+    margin:5% 30% 15% 30%;
+    width: 40%;
+    align-items: center;
+    align-self: center;
+    background: -webkit-repeating-radial-gradient(rgba(244, 158, 158, 0.358), rgba(101, 170, 138, 0.253));
+    user-select: none;
+}
+
+input[type=text] {
+    width: 60%;
+    padding: 2px 10px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=file] {
+    width: 60%;
+    margin: 4px 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+    outline: none;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    align-self: center;
+}
+
+input[type=submit] {
+    background: -webkit-repeating-radial-gradient(rgba(244, 158, 158, 0.358), rgba(101, 170, 138, 0.253));
+    color: white;
+    padding: 14px 60px;
+    margin: 8px 2px 8px 2px;
+    border-radius: 4px;
+    border: 1px solid rgba(9, 36, 80, 0.018);
+    cursor: pointer;
+    align-self: center;
+    outline: 3px solid rgb(9, 185, 188);
+}
+
+input[type=submit]:hover {
+    background: repeating-linear-gradient(rgba(3, 98, 41, 0.132), rgba(19, 156, 1, 0.219));
+}
+
+input[type=password] {
+    width: 60%;
+    padding: 2px 10px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+    outline: none;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+body {
+    background: -webkit-repeating-radial-gradient(rgba(18, 216, 176, 0.241), rgba(44, 192, 18, 0.038));
+}
