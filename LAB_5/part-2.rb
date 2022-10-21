@@ -1,32 +1,32 @@
-def is_local_max(index, a)
+def local_max?(index, a)
     if a[index] > a[index - 1] && a[index] > a[index + 1]
         return true
     end
-    return false
+    false
 end 
 
-def is_capable(index, a)
+def capable?(index, a)
     if a[index] > 0 && a[index] % 2 == 0 && a[index - 1] > 0 && a[index - 1] % 2 == 0 && a[index + 1] > 0 && a[index + 1] % 2 == 0
         return true
     end
-    return false
+    false
 end
 
-def generate_arr()
-    a = Array.new
+def generate_arr
+    arr = Array.new
     rand(2..100).times do
-        a.append(rand(1..100) - 50)
+        arr.append(rand(1..100) - 50)
     end
-    return a
+    arr
 end
 
 a = generate_arr()
 print (a.to_s + "\n")
 
-sup_arr = Array.new
+sup_arr = []
 
 for index in (1..a.length - 2)
-    if (is_local_max(index, a) && is_capable(index, a))
+    if (local_max?(index, a) && capable?(index, a))
         sup_arr.append(index)
     end
 end

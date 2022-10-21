@@ -5,6 +5,6 @@ class MathTask
     end
     
     def calc()
-        return ( ((@x - 1).abs**(1.0 / 2) - (@y).abs**(1.0 / 2)).to_f / (1 + (@x**2 / 2.0) + (@y**2 / 4.0)) )
+        ((@x - 1).abs**(1.0 / 2) - (@y).abs**(1.0 / 2)).to_f / (1 + (@x**2 / 2.0) + (@y**2 / 4.0))
     end
 end

@@ -28,7 +28,7 @@ class TestTextHandler < MiniTest::Test
 
     def test_4
         for i in 0..20 do
-            random_text = TextHandler.generate_random_text()
+            random_text = TextHandler.generate_random_text
             text_handler = TextHandler.new(random_text)
             assert_equal(text_handler.text, random_text)
         end

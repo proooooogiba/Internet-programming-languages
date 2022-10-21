@@ -1,23 +1,22 @@
 class WorkWithFile
-    attr_accessor :filename, :string
+    attr_accessor :filename
     def initialize(filename = nil)
         @filename = filename
     end
 
     def self.generate_word
-        return (0...(rand(10))).map { ('а'..'я').to_a[rand(33)] }.join
+        (0...(rand(20))).map { ('а'..'я').to_a.sample }.join
     end
 
     def self.generate_random_text
         arr = Array.new
         (1..rand(2..10)).each { arr.push(rand(2..10).times.map { generate_word() }.join(" ")) }
-        return arr.join("\n").to_s
+        arr.join("\n").to_s
     end
 
     def write_to_file(string = WorkWithFile.generate_random_text())
-        @string = string
         file = File.open(@filename + ".txt", "w")
-        file.write(@string)
+        file.write(string)
         file.close
     end
 
@@ -25,7 +24,7 @@ class WorkWithFile
         f = File.open(@filename + ".txt", "r")
         text = f.read()
         f.close
-        return text        
+        text        
     end
 
     def count_words_length(length = 2)
