@@ -1,5 +1,7 @@
 [submodule "LAB_8"]
 	path = LAB_8
 	url = https://github.com/proooooogiba/LAB_8.git
-	branch = LAB_8
-
+[submodule "LAB_9"]
+	path = LAB_9
+	url = https://github.com/proooooogiba/LAB_8.git
+	branch = LAB_9
