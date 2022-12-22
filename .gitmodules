@@ -9,3 +9,7 @@
 	path = LAB_11
 	url = https://github.com/proooooogiba/Rails.git
 	branch = LAB_11_1
+[submodule "LAB_12"]
+	path = LAB_12
+	url = https://github.com/proooooogiba/Rails.git
+	branch = LAB_12_1
