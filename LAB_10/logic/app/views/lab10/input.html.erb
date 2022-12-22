@@ -1,0 +1,21 @@
+<%= form_with url: '/lab10/view.xml', method: :get do |form| %>
+	<%=number_field_tag(:num, "Введите любое число от 1 до 100", class: "form-control", min:"1", max:"100", pattern: "^[1-9][0-9]?$|^100$", placeholder: "Введите число от 1 до 100", required: "required")%>
+	<br/>
+	<p>Где провести рендер HTML:</p>
+	<%= form.radio_button :where, :server, class: 'form-check-input', required: 'required' %>
+	<%= form.label :where_server, 'На стороне сервера', class: 'form-check-label' %>
+	<br/>
+	<%= form.radio_button :where, :client, class: 'form-check-input', required: 'required' %>
+	<%= form.label :where_client, 'На стороне клиента', class: 'form-check-label' %>
+	<br/>
+	<br/>
+	<p>Формат вывода:</p>
+	<%= form.radio_button :what, :source, class: 'form-check-input', required: 'required' %>
+	<%= form.label :what_source, 'Исходный код', class: 'form-check-label' %>
+	<br/>
+	<%= form.radio_button :what, :transformed, class: 'form-check-input', required: 'required' %>
+	<%= form.label :what_transformed, 'HTML страница', class: 'form-check-label' %>
+	<br/>
+	<br/>
+	<%= form.submit('Вычислить', class: 'btn btn-primary') %>
+<% end %>
