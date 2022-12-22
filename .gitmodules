@@ -5,10 +5,6 @@
 	path = LAB_9
 	url = https://github.com/proooooogiba/LAB_8.git
 	branch = LAB_9
-[submodule "LAB_11"]
-	path = LAB_11
-	url = https://github.com/proooooogiba/Rails.git
-	branch = LAB_11_1
 [submodule "LAB_12"]
 	path = LAB_12
 	url = https://github.com/proooooogiba/Rails.git
@@ -17,3 +13,7 @@
 	path = Maply
 	url = https://github.com/proooooogiba/Maply.git
 	branch = main
+[submodule "LAB_11"]
+	path = LAB_11
+	url = https://github.com/proooooogiba/Rails.git
+	branch = LAB_11_1
